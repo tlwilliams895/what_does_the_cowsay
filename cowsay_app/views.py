@@ -24,9 +24,12 @@ def index(request):
             # utf-8 is used here because it is a very common encoding practice,
             # but you need to use the encoding in the proper location where
             # the data resides.
-            process = subprocess.run(
-                ['cowsay', data['text_line']], capture_output=True
-            ).stdout.decode("utf-8")
+            process = subprocess.check_output(
+                ['cowsay', data['text_line']]).decode("utf-8")
+            # ...Or try this option - both works!!
+            # process = subprocess.run(
+            #     ['cowsay', data['text_line']], capture_output=True
+            # ).stdout.decode("utf-8")
 
             return render(request, "index.html", {
                 "output": process,
