@@ -3,14 +3,15 @@ from cowsay_app.forms import CowSayForm
 from cowsay_app.models import CowSayModel
 import subprocess
 
-# Cowsay View
-# - if there is output, render it to the browser
-# - always renders a fresh version of our form
 # Assistance from Cesar Ramos, Deidre Boddie, Corey Shafer Tutorial
 # on Subprocess, Real Python Tutorial, and Python docs
+# Convert bytes to string python 3:
+# https://www.askpython.com/python/string/python-string-bytes-conversion
 
 
-# Create your views here.
+# Create your views here - Cowsay View
+# - if there is output, render it to the browser
+# - always renders a fresh version of our form
 def index(request):
     if request.method == "POST":
         new_form = CowSayForm()
@@ -20,6 +21,9 @@ def index(request):
             CowSayModel.objects.create(
               text_line=data.get('text_line')
             )
+            # utf-8 is used here because it is a very common encoding practice,
+            # but you need to use the encoding in the proper location where
+            # the data resides.
             process = subprocess.run(
                 ['cowsay', data['text_line']], capture_output=True
             ).stdout.decode("utf-8")
