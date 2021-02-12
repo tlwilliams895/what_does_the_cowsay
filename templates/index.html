@@ -1,0 +1,35 @@
+<h1>
+  {{ homepages|default:"Cowsay Home" }}
+</h1>
+
+<p>
+    <a href={% url "homepage" %}>Home</a> ||
+    <a href={% url "history" %}>Most Recent</a> ||
+    <a href="/">Reset</></a>
+</p>
+
+<hr />
+
+<p>
+  <strong>What does the Cow_Say?</strong>
+  <br />
+  {% comment %} <input type="text"/> {% endcomment %}
+</p>
+
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<pre>{{ output }}</pre>
+
+
+{% comment %} 
+HTML Note: The HTML <pre> tag is used for indicating preformatted text.
+The <pre> tag surrounds the code being marked up as preformatted.
+Resource: https://www.quackit.com/html_5/tags/html_pre_tag.cfm
+{% endcomment %}

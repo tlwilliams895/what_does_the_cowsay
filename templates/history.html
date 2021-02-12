@@ -1,0 +1,25 @@
+<h1>
+  {{ history_pages|default:"Cowsay History" }}
+</h1>
+
+<p>
+    <a href="/">Home</a> ||
+    <a href="/history/">Most Recent</a> ||
+     <a href="/">Herd Back</a>
+</p>
+
+<hr />
+
+{% comment %} 
+list of ten most recent inputs, with oldest at bottom, most recent at top 
+{% endcomment %}
+
+<h4>Last Ten Recent Cow_Says:</h4>
+<ul>
+    {% for item in history %}
+
+      <li>{{ item.text_line }}</li>
+      <p>{{ item.date }}</p>
+
+    {% endfor %}
+</ul>
