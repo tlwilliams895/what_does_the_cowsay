@@ -1,25 +1,30 @@
-<h1>
-  {{ history_pages|default:"Cowsay History" }}
-</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+  {{ history_pages|default:"🍪Cowsay History🍪" }}
+</h2>
+
+<!-- History Page
+- list of ten most recent inputs (oldest at bottom, most recent at top)
+- Displays the cow selected for that recent input message
+-->
 
 <p>
-    <a href="/">Home</a> ||
-    <a href="/history/">Most Recent</a>
-     {% comment %} <a href="/">Herd Back</a> {% endcomment %}
+  <strong>Last Ten Recent Cow_Says:</strong>
 </p>
-
 <hr />
 
-{% comment %} 
-list of ten most recent inputs, with oldest at bottom, most recent at top 
-{% endcomment %}
-
-<h4>Last Ten Recent Cow_Says:</h4>
 <ul>
     {% for item in history %}
 
-      <li>{{ item.text_line }}</li>
-      <p>{{ item.date }}</p>
+      <li>{{ item.date }}</li>
+      <p>***{{ item.text_line }}***</p>
+      <br />
+      <p>{{ item.cowsay_type }}</p>
 
     {% endfor %}
 </ul>
+
+{% endblock %}

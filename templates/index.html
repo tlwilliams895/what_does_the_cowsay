@@ -1,35 +1,50 @@
-<h1>
-  {{ homepages|default:"Cowsay Home" }}
-</h1>
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+
+<h2>
+  {{ homepages|default:"🐄Cowsay Home🐄" }}
+</h2>
 
 <p>
-    <a href={% url "homepage" %}>Home</a> ||
-    <a href={% url "history" %}>Most Recent</a>
-    {% comment %} <a href="/">Reset</></a> {% endcomment %}
+  <strong>What does the Cow_Say?</strong> <br />
 </p>
 
-<hr />
+<!--
+  - On the homepage, include a dropdown of options for the ASCII cow that
+  is displayed:
+      - default (this is the default cow)
+      - tux
+      - dragon
+      - kitty
+      - skeleton
 
-<p>
-  <strong>What does the Cow_Say?</strong>
-  <br />
-  {% comment %} <input type="text"/> {% endcomment %}
-</p>
+  - On the homepage, default the selection to the default cow and render
+  the page with a cow that says "Welcome".
+-->
 
-<form action="" method="POST">
+<form action="" method="POST" class="form">
 
     {% csrf_token %}
-    {{ form.as_p }}
+    {% bootstrap_form form layout='inline' %}
+    {% comment %} {{ form.as_p }} {% endcomment %}
 
-    <button type="submit">Submit</button>
+    {% buttons %}
+    <button type="submit" class="btn btn-secondary">
+      Submit
+    </button>
+    {% endbuttons %}
 
 </form>
 
 <pre>{{ output }}</pre>
+{% endblock %}
 
+<!--
+ - After submitting the form, set a COOKIE on the request that saves the
+  default as the one selected. 
 
-{% comment %} 
-HTML Note: The HTML <pre> tag is used for indicating preformatted text.
-The <pre> tag surrounds the code being marked up as preformatted.
-Resource: https://www.quackit.com/html_5/tags/html_pre_tag.cfm
-{% endcomment %}
+  - When the page is reloaded, the page renders, "Welcome back"
+  (but does not display the message on first visit) with the previously 
+  selected cow option (set by the COOKIE). 
+-->

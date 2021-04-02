@@ -1,4 +1,4 @@
 {
-  "python.pythonPath": "/home/tlwilliams895/.pyenv/shims/python",
+  "python.pythonPath": "/usr/bin/python",
   "python.linting.enabled": false
 }

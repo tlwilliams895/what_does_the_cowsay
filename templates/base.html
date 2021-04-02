@@ -1,0 +1,62 @@
+{% load static %}
+{# Resource: https://django-bootstrap4.readthedocs.io/en/latest/quickstart.html #}
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐮🍪Give a Cow a Cookie EC🍪🐮</title>
+</head>
+
+<body>
+  <header class="page-header">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+          <a class="navbar-brand" href="/">🐮What does the Cow_Say?🐮</a>
+          <button class="navbar-toggler" type="button" 
+                  data-toggle="collapse" data-target="#navbarText" 
+                  aria-controls="navbarText" aria-expanded="false" 
+                  aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href={% url "homepage" %}>🏡Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href={% url "history" %}>🔄Most Recent</a>
+                </li>
+            </ul>
+          </div>
+      </nav>
+  </header>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+
+<!--
+  - Use Template Extending and bootstrap4 in the base.html file
+  - Create a functional navbar that contains working links to the homepage
+  and history views.
+-->

@@ -1,17 +1,14 @@
 from django.shortcuts import render
 from cowsay_app.forms import CowSayForm
 from cowsay_app.models import CowSayModel
+
 import subprocess
 
-# Assistance from Cesar Ramos, Deidre Boddie, Corey Shafer Tutorial
-# on Subprocess, Real Python Tutorial, and Python docs
 # Convert bytes to string python 3:
 # https://www.askpython.com/python/string/python-string-bytes-conversion
 
 
 # Create your views here - Cowsay View
-# - if there is output, render it to the browser
-# - always renders a fresh version of our form
 def index(request):
     if request.method == "POST":
         new_form = CowSayForm()
