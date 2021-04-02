@@ -1,5 +1,4 @@
 from django import forms
-from cowsay_app.models import CowSayModel
 
 # Cowsay Form - a form that just takes in a text line
 """
@@ -36,4 +35,3 @@ class CowSayModel(models.Model):
 class CowSayForm(forms.Form):
     cowsay_type = forms.CharField()
     text_line = forms.CharField(widget=forms.TextInput)
-    # date = forms.DateTimeField(widget=forms.TimeField)
