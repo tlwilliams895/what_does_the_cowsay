@@ -81,7 +81,7 @@ def history(request):
     # print('Message:', reload_message)
     process = subprocess.run(['cowsay', '-f', f'{cowsay_type}',
                           f'{message}'], capture_output=True).stdout.decode("utf-8")
-    print('Subprocess:', process)
+    # print('Subprocess:', process)
 
     history = CowSayModel.objects.all().order_by('-id')[:10]
 
