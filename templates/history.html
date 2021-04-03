@@ -16,6 +16,9 @@
 </p>
 <hr />
 
+<!--
+<pre>{{ process }}</pre>
+-->
 <ul>
     {% for item in history %}
 
@@ -23,6 +26,7 @@
       <p>***{{ item.text_line }}***</p>
       <br />
       <p>{{ item.cowsay_type }}</p>
+      <pre>{{ process }}</pre>
 
     {% endfor %}
 </ul>

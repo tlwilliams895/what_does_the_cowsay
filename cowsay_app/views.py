@@ -1,14 +1,12 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
+import subprocess
 
 from cowsay_app.forms import CowSayForm
 from cowsay_app.models import CowSayModel
 
-import subprocess
-
 # Convert bytes to string python 3:
 # https://www.askpython.com/python/string/python-string-bytes-conversion
-
 
 # Create your views here - Cowsay View
 def index(request):
@@ -25,7 +23,7 @@ def index(request):
             cowsay_type = data['cowsay_type']
             form = CowSayForm()
             response = HttpResponse(
-              'Successful post submission - return <a href={% url "homepage" %}>home</a>!'
+              'Successful post submission - return <a href="/">home</a>!'
             )
             # response = redirect(homepage) <-- Must set homepage to an url
             response.set_cookie('cow_post', text_line)
@@ -41,7 +39,7 @@ def index(request):
             # but you need to use the encoding in the proper location where
             # the data resides.
           process = subprocess.run(
-              ['cowsay', '-f', f'{cowsay_type}', f'{cow_post}'], capture_output=True
+              ['cowsay', '-f', f'{cow_post}', f'{cowsay_type}'], capture_output=True
           ).stdout.decode("utf-8")
 
           reload_message = 'Welcome back to Cow_Say!'
@@ -54,6 +52,7 @@ def index(request):
     process = subprocess.run(
       ['cowsay', 'Welcome!'], capture_output=True
     ).stdout.decode("utf-8")
+
     form = CowSayForm()
     return render(request, "index.html", {
       "homepage": "Cowsay Home",
@@ -66,11 +65,28 @@ def index(request):
 # Use negative indexes in QuerySet, inverted order of the id, then slice it
 # Resource StackOverFlow: https://stackoverflow.com/questions/47428403/how-to-get-the-last-10-item-data-in-django
 def history(request):
-    cow_says = CowSayModel.objects.all().order_by('-id')[:10]
-    cowsay_type = cow_says.cowsay_type
-    reload_message = cow_says.text_line
+    cow_posts = CowSayModel.objects.all()
+    posts_num = len(cow_posts)
     
+    first_post = CowSayModel.objects.all().order_by('-id')
+
+    if posts_num >= 10:
+      first_post = posts_num - 10
+    
+    cow_post = CowSayModel.objects.get(id=first_post)
+
+    cowsay_type = cow_post.cowsay_type
+    # print('Post_Type:', post_type)
+    message = cow_post.text_line
+    # print('Message:', reload_message)
+    process = subprocess.run(['cowsay', '-f', f'{cowsay_type}',
+                          f'{message}'], capture_output=True).stdout.decode("utf-8")
+    print('Subprocess:', process)
+
+    history = CowSayModel.objects.all().order_by('-id')[:10]
+
     return render(request, "history.html", {
       "history_page": "Cowsay History",
-      "history": cow_says
+      "history": history,
+      "process": process
     })

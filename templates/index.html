@@ -9,7 +9,6 @@
 <p>
   <strong>What does the Cow_Say?</strong> <br />
 </p>
-
 <!--
   - On the homepage, include a dropdown of options for the ASCII cow that
   is displayed:
@@ -22,6 +21,8 @@
   - On the homepage, default the selection to the default cow and render
   the page with a cow that says "Welcome".
 -->
+<p><strong>{{ reload_message }}</strong></p>
+<pre>{{ process }}</pre>
 
 <form action="" method="POST" class="form">
 
@@ -37,7 +38,6 @@
 
 </form>
 
-<pre>{{ output }}</pre>
 {% endblock %}
 
 <!--

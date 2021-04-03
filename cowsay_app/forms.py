@@ -33,5 +33,12 @@ class CowSayModel(models.Model):
 
 # Create your forms here.
 class CowSayForm(forms.Form):
-    cowsay_type = forms.CharField()
+    DISPLAY_CHOICES = (
+        ('DEFAULT', 'Default'),
+        ('TUX', 'Tux'),
+        ('DRAGON', 'Dragon'),
+        ('HELLO_KITTY', 'Hello_Kitty'),
+        ('SKELETON', 'Skeleton'),
+    )
+    cowsay_type = forms.ChoiceField(choices=DISPLAY_CHOICES)
     text_line = forms.CharField(widget=forms.TextInput)
