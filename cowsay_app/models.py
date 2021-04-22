@@ -12,7 +12,7 @@ date (DateTimeField)
 
 # Create your models here.
 class CowSayModel(models.Model):
-    text_line = models.TextField(max_length=100)
+    text_line = models.TextField(max_length=100, null=True)
     date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
