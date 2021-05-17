@@ -1,0 +1,21 @@
+:root {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(90deg, #eca116, #14f0d3);
+}
+
+header {
+  font-size: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 48px;
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+li {
+  display: inline;
+}
