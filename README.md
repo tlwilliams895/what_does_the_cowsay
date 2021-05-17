@@ -1,4 +1,4 @@
-# http-forms-and-cows
+# What Does The Cowsay?
 Not everything in computing has bindings for Python (as much as I would like that to be true), so it's important to learn how to work with the host system and pass details back and forth.
 
 The goal for this project is to build a very simple django server (so simple that it's only two views, one form, and one model) that passes user input to the operating system, runs a command, retrieves the output, and sends it back to the client. We use the model to back up a copy of what people submit to the page, and have a second endpoint at /history where it lists the last ten things that were sent through the form.
