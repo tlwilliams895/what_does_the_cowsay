@@ -1,0 +1,22 @@
+asgiref==3.3.1
+backcall @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/43/8e/e8/4e598704edf6fb4a53d552ea511c04e9958dcf850897760e5387878b99/backcall-0.2.0-py2.py3-none-any.whl
+beautifulsoup4==4.9.3
+decorator @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/4e/0d/42/3677b6c493b68794c351e9fbd528ed0b596d4b11793d757285eb694b48/decorator-4.4.2-py2.py3-none-any.whl
+Django @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/6f/40/f1/62d75bafb17d2bc4508112959ef51cf0ef0890b9b83452c02237692e99/Django-3.1.6-py3-none-any.whl
+django-bootstrap4==2.3.1
+django-environ @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/87/d0/e4/2e59fd1e2526f0f52d73260ba0356904cb9c2bcd82299d5a3f88b3e341/django_environ-0.4.5-py2.py3-none-any.whl
+ipdb @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/91/d9/cc/ce127596ff2468c355bf34d81b146cca3da752b881ea992878990ed49c/ipdb-0.13.4.tar.gz
+ipython @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/b0/fb/2d/33b22dedf8067ec1162207bb49128c8996946a5dcf349a0b72ffdf0086/ipython-7.20.0-py3-none-any.whl
+ipython-genutils @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/b4/31/01/6f96480580d1674cab0b5e26dc9fca7bbdf7a2fd5811a7807a92436268/ipython_genutils-0.2.0-py2.py3-none-any.whl
+jedi @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/2a/5b/d6/62e1f4e7b392c3e7f8258bbe3159dff695814a46e65547cd547ca0fedb/jedi-0.18.0-py2.py3-none-any.whl
+parso @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/61/0e/11/1101ce07fbc6828dcc0f8951a808bce71c53776aea4788ecf4fe8f0b60/parso-0.8.1-py2.py3-none-any.whl
+pexpect @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/5c/c2/43/b54fe59cab7e831df35401c8e6840162bf4a2ae5862604e7bc22db3000/pexpect-4.8.0-py2.py3-none-any.whl
+pickleshare @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/b5/48/a1/d2b823337003d531d87cf0d503ef28bb579703a74d14ad24a88863d616/pickleshare-0.7.5-py2.py3-none-any.whl
+prompt-toolkit @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/92/34/b3/b8e4302f6fc97927399453a5519808399cdf1e380b9b470ec26506f1cc/prompt_toolkit-3.0.16-py3-none-any.whl
+ptyprocess @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/2a/29/5d/0cdc5ec916431d60f03d2f725c54edbfa9fe53700b75fdfee209a3291e/ptyprocess-0.7.0-py2.py3-none-any.whl
+Pygments @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/54/12/c1/dee5244df91f15f2bd40d20b21c37bb0067e7ec19e45606a530f902ce5/Pygments-2.7.4-py3-none-any.whl
+pytz==2021.1
+soupsieve==2.2.1
+sqlparse==0.4.1
+traitlets @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/f3/6b/36/998ab52c38eb1c4820cdef1e66043ddebb64e04535f88dbfd04486ce03/traitlets-5.0.5-py3-none-any.whl
+wcwidth @ file:///home/tlwilliams895/.cache/pypoetry/artifacts/7d/f4/60/0737157bb9711fec72c70dff523aa54491eef317e0d586cf5388ff0908/wcwidth-0.2.5-py2.py3-none-any.whl
