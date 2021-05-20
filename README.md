@@ -14,7 +14,7 @@ WINDOWS USERS ONLY:
 
 Install cowsay by installing it through NPM: `npm install -g cowsay`. When using Python's `subprocess` module, you will _most likely_ need to pass `shell=True` as well. This is because Windows does not look at the PATH without passing that flag.
 
-#### **Your Task**
+#### **Project Tasks:**
 
 Write a Django server that:
 
